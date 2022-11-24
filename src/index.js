@@ -1,10 +1,14 @@
 import "./style.css";
 import Product from "../modules/product.js";
+import comments from '../modules/comments.js';
 
 const products = [];
 
+const appContainer = document.querySelector('.app_container');
+const closePopup = document.querySelector('.close');
 const storeContent = document.querySelector(".app_content");
 const ProductList = document.querySelector(".app_content");
+
 
 const likeProduct = async (id) => {
   const res = await fetch(
@@ -41,7 +45,6 @@ const displayProducts = () => {
                 <span>${element.likes} likes </span>
                 </div>
             </div>
-            
             <button id="comment">Comments</button>
             <button id="refreshs">Reservations</button>
           </div>
@@ -101,6 +104,10 @@ ProductList.addEventListener("click", (e) => {
     likeProduct(id);
   } else if (element.getAttribute("id") === "comment") {
     const id = element.parentElement.parentElement.getAttribute("id");
-    console.log(id);
+    const product = products.find((p) => p.id === parseInt(id));
+    console.log("popup");
+    comments(product);
+  } else if (element.classList.contains("close")) {
+    ProductList.lastElementChild.remove();
   }
 });
