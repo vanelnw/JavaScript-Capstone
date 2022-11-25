@@ -1,54 +1,12 @@
 import './style.css';
 import Product from './modules/product.js';
 import comments from './modules/comments.js';
+import countProduct from './modules/productCounter.js';
+import { displayProducts, likeProduct } from './modules/store.js';
 
 const products = [];
 
-const storeContent = document.querySelector('.app_content');
 const ProductList = document.querySelector('.app_content');
-
-const likeProduct = async (id) => {
-  await fetch(
-    `https://us-central1-involvement-api.cloudfunctions.net/capstoneApi/apps/${process.env.API_KEY}/likes/`,
-    {
-      method: 'POST',
-      body: JSON.stringify({
-        item_id: id,
-      }),
-      headers: {
-        'Content-type': 'application/json; charset=UTF-8',
-      },
-    },
-  ).then(() => {
-    const likeItem = ProductList.querySelector(`div[id="${id}"]`);
-    const li = likeItem.querySelector('span');
-    li.innerHTML = `${products[id].likes + 1} likes`;
-    products[id].likes += 1;
-  });
-};
-
-const displayProducts = () => {
-  products.forEach((element) => {
-    storeContent.innerHTML += `
-         <div id="${element.id}" class="card">
-          <div class="card-inner">
-            <div class="img_container">
-              <img src=${element.image} alt="" />
-            </div>
-            <div id="infos">
-                <div class="title">${element.name}</div>
-                <div class="likes">
-                <i class="fa-regular fa-heart" ></i>
-                <span>${element.likes} likes </span>
-                </div>
-            </div>
-            <button id="comment">Comments</button>
-            <button id="refreshs">Reservations</button>
-          </div>
-        </div>
- `;
-  });
-};
 
 const store = async () => {
   const response = await fetch(
@@ -58,9 +16,10 @@ const store = async () => {
   const Likes = await fetch(
     `https://us-central1-involvement-api.cloudfunctions.net/capstoneApi/apps/${process.env.API_KEY}/likes/`,
   ).then((res) => res.json());
+
   response.forEach((element) => {
     const id = response.indexOf(element);
-    const likes = Likes.find((l) => l.item_id === `${id}`)?.likes || 0;
+  const likes = Likes.find((l) => l.item_id === id.toString())?.likes || 0;
 
     const prod = new Product(
       id,
@@ -70,24 +29,9 @@ const store = async () => {
     );
     products.push(prod);
   });
-
-  displayProducts();
+  displayProducts(products);
+  countProduct();
 };
-
-const getAppApi = async () => {
-  await fetch(
-    'https://us-central1-involvement-api.cloudfunctions.net/capstoneApi/apps',
-    {
-      method: 'POST',
-      headers: {
-        'Content-type': 'application/json; charset=UTF-8',
-      },
-    },
-  );
-};
-
-getAppApi();
-
 document.addEventListener('DOMContentLoaded', store());
 
 ProductList.addEventListener('click', (e) => {
@@ -96,7 +40,7 @@ ProductList.addEventListener('click', (e) => {
     const id = element.parentElement.parentElement.parentElement.parentElement.getAttribute(
       'id',
     );
-    likeProduct(id);
+   likeProduct(products, id);
   } else if (element.getAttribute('id') === 'comment') {
     const id = element.parentElement.parentElement.getAttribute('id');
     const product = products.find((p) => p.id === parseInt(id, 10));

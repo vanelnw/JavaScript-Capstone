@@ -59,9 +59,26 @@ ul {
   align-items: center;
 }
 
+#itemsNumber {
+  width: 1.5rem;
+  height: 1.5rem;
+  border-radius: 100%;
+  background-color: rgb(158, 233, 176);
+  color: rgb(34, 3, 3);
+  padding: 5px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
 .navList {
   display: flex;
   gap: 30px;
+}
+
+.navItem {
+  display: flex;
+  gap: 2px;
 }
 
 .app_content {
@@ -115,10 +132,12 @@ ul {
 
 .fa-heart {
   cursor: pointer;
+  color: red;
 }
 
 .fa-heart:hover {
   color: rgb(169, 61, 147);
+  transform: scale(1.5);
 }
 
 .footer {
