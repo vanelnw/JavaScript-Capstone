@@ -32,6 +32,7 @@ const store = async () => {
   displayProducts(products);
   countProduct();
 };
+
 document.addEventListener('DOMContentLoaded', store());
 
 ProductList.addEventListener('click', (e) => {
