@@ -15,7 +15,7 @@ alt="logo" width="140"  height="auto" />
 
 # 📗 Table of Contents
 
-- [� Table of Contents](#-table-of-contents)
+- [📗 Table of Contents](#-table-of-contents)
 - [📖 JavaScript Capstone Project ](#-javascript-capstone-project-)
   - [🛠 Built With ](#-built-with-)
     - [Tech Stack ](#tech-stack-)
@@ -169,7 +169,7 @@ To run tests, run the following command:
 👤 **Raymond Olisa**
 
 - GitHub: [dialite](https://github.com/dialite)
-- LinkedIn: [](https://www.linkedin.com/in/raymond-olisa-775929243/)
+- LinkedIn: [raymond-olisa](https://www.linkedin.com/in/raymond-olisa-775929243/)
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
