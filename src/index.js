@@ -1,6 +1,6 @@
 import "./style.css";
-import Product from "../modules/product.js";
-import comments from '../modules/comments.js';
+import Product from "./modules/product.js";
+import comments from './modules/comments.js';
 
 const products = [];
 
@@ -105,7 +105,6 @@ ProductList.addEventListener("click", (e) => {
   } else if (element.getAttribute("id") === "comment") {
     const id = element.parentElement.parentElement.getAttribute("id");
     const product = products.find((p) => p.id === parseInt(id));
-    console.log("popup");
     comments(product);
   } else if (element.classList.contains("close")) {
     ProductList.lastElementChild.remove();

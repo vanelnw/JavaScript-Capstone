@@ -5,7 +5,7 @@ const displayComment = (newComment) => {
 };
 
 const addComment = async (newComment, url) => {
-  const getURL = `https://us-central1-involvement-api.cloudfunctions.net/capstoneApi/apps/${process.env.API_KEY}/comments?item_id=${newComment.item_id}`
+  const getURL = `https://us-central1-involvement-api.cloudfunctions.net/capstoneApi/apps/1PzqD6Qshuxs8IJlxxL7/comments?item_id=${newComment.item_id}`
   await fetch(url, {
     method: 'POST',
     body: JSON.stringify(newComment),

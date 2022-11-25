@@ -1,6 +1,7 @@
 /* eslint-disable no-alert */
 import NewComment from './newComment.js';
 import addComment from './addComment.js';
+import { countElement } from './commentsCounter';
 
 const comments = async (product) => {
   const cardsContainer = document.querySelector('.app_container');
@@ -8,7 +9,6 @@ const comments = async (product) => {
   console.log(product);
   const url = `https://us-central1-involvement-api.cloudfunctions.net/capstoneApi/apps/${process.env.API_KEY}/comments?item_id=${product.id}`;
   const comments = await fetch(url).then((response) => response.json());
-        console.log(comments);
         productList.innerHTML += `
         <div class= 'modal-container'>
         <div class="modal" id="exampleModal${product.id}" >
@@ -23,8 +23,8 @@ const comments = async (product) => {
                   <textarea id="ta${product.id}" class= 'description' name="ta${product.id}" rows="4" cols="50" placeholder="Your insights" required></textarea>
                   <button type="button" class="btn btn-primary btnAddComment">Comment</button>
                 </form>
+                <h4>Comments(<span class="total-comments">0</span>)</h4>
                 <div class= 'result'>
-                  <h4>Comments</h4>
                 </div>
               </div>
             </div>
@@ -33,9 +33,9 @@ const comments = async (product) => {
         `;
 
 
-
 const commentContent = cardsContainer.querySelector('.result');
 comments?.forEach((element) => commentContent.innerHTML += `<div>${element.creation_date} ${element.username} : ${element.comment}</div>`)
+  countElement();
   cardsContainer.addEventListener('click', (e) => {
     // Comment's URL
     const url = `https://us-central1-involvement-api.cloudfunctions.net/capstoneApi/apps/${process.env.API_KEY}/comments`;
