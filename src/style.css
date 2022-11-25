@@ -172,18 +172,18 @@ button {
   margin: 1rem;
 }
 
-.form-content input {
+.form-content textarea {
   padding: 5px;
   font-size: 1em;
   border: 2px solid #000;
   width: 95%;
 }
 
-.form-content textarea {
+.form-content input {
   padding: 5px;
   font-size: 1em;
   border: 2px solid #000;
-  width: 95%;
+  width: 96%;
 }
 
 .form-content button {
@@ -218,17 +218,18 @@ button {
   border: 1px solid #000;
 }
 
+.close {
+  position: relative;
+  top: 20px;
+  left: 95%;
+}
+
 .modal-content {
   width: 76%;
   padding: 15px 30px;
   position: absolute;
 }
 
-.close {
-  position: relative;
-  top: 20px;
-  left: 95%;
-}
 
 .modal-body {
   display: flex;
