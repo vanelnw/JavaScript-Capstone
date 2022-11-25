@@ -34,22 +34,16 @@ const comments = async (product) => {
   comments?.forEach((element) => { commentContent.innerHTML += `<div>${element.creation_date} ${element.username} : ${element.comment}</div>`; });
   countElement();
   cardsContainer.addEventListener('click', (e) => {
-    // Comment's URL
     const url = `https://us-central1-involvement-api.cloudfunctions.net/capstoneApi/apps/${process.env.API_KEY}/comments`;
 
     if (e.target.classList.contains('btnAddComment')) {
       if (e.target.parentElement[0].value !== '' && e.target.parentElement[1].value) {
-        // Your name
         const username = e.target.parentElement[0].value;
-        // Your insights
         const comment = e.target.parentElement[1].value;
-        // ID object
         const newComment = new NewComment(username, comment, product.id);
 
-        // Add comment in API
         addComment(newComment, url);
 
-        // Clear inputs
         e.target.parentElement[0].value = '';
         e.target.parentElement[1].value = '';
       }
