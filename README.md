@@ -15,21 +15,23 @@ alt="logo" width="140"  height="auto" />
 
 # 📗 Table of Contents
 
-- [📖 About the Project](#about-project)
-  - [🛠 Built With](#built-with)
-    - [Tech Stack](#tech-stack)
-    - [Key Features](#key-features)
-  - [🚀 Live Demo](#live-demo)
-- [💻 Getting Started](#getting-started)
-  - [Setup](#setup)
-  - [Prerequisites](#prerequisites)
-  - [Usage](#usage)
-  - [Run tests](#run-tests)
-- [👥 Authors](#authors)
-- [🤝 Contributing](#contributing)
-- [⭐️ Show your support](#support)
-- [🙏 Acknowledgements](#acknowledgements)
-- [📝 License](#license)
+- [� Table of Contents](#-table-of-contents)
+- [📖 JavaScript Capstone Project ](#-javascript-capstone-project-)
+  - [🛠 Built With ](#-built-with-)
+    - [Tech Stack ](#tech-stack-)
+    - [Key Features ](#key-features-)
+  - [🚀 Live Demo ](#-live-demo-)
+  - [💻 Getting Started ](#-getting-started-)
+    - [Prerequisites](#prerequisites)
+    - [Setup](#setup)
+    - [Install](#install)
+    - [Usage](#usage)
+    - [Run tests](#run-tests)
+  - [👥 Authors ](#-authors-)
+  - [🤝 Contributing ](#-contributing-)
+  - [⭐️ Show your support ](#️-show-your-support-)
+  - [🙏 Acknowledgments ](#-acknowledgments-)
+  - [📝 License ](#-license-)
 
 <!-- PROJECT DESCRIPTION -->
 
@@ -77,7 +79,7 @@ The website display the list of products and allows users to like their favorite
 <details>
 <summary>Database</summary>
   <ul>
-    <li><a href="https://www.tvmaze.com/api">TVMaze API</a></li>
+    <li><a href="https://fakestoreapi.com/">Fakestore API</a></li>
   </ul>
 </details>
 
@@ -167,7 +169,7 @@ To run tests, run the following command:
 👤 **Raymond Olisa**
 
 - GitHub: [dialite](https://github.com/dialite)
-- LinkedIn: [](https://www.linkedin.com/in/)
+- LinkedIn: [](https://www.linkedin.com/in/raymond-olisa-775929243/)
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
