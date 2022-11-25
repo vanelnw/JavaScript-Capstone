@@ -6,7 +6,15 @@ const comments = async (product) => {
   const cardsContainer = document.querySelector('.app_container');
   const productList = document.querySelector('.app_content');
   const url = `https://us-central1-involvement-api.cloudfunctions.net/capstoneApi/apps/${process.env.API_KEY}/comments?item_id=${product.id}`;
-  const comments = await fetch(url).then((response) => response.json());
+  let comments = [];
+  try {
+    comments = await fetch(url).then((response) => response.json());
+    if (typeof comments.error === 'object') {
+      comments = [];
+    }
+  // eslint-disable-next-line no-console
+  } catch (error) { console.error(error); }
+
   productList.innerHTML += `
         <div class= 'modal-container'>
         <div class="modal" id="exampleModal${product.id}" >
