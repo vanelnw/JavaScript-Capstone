@@ -1,5 +1,6 @@
 import './style.css';
 import Product from './modules/product.js';
+import comments from './modules/comments.js';
 import countProduct from './modules/productCounter.js';
 import { displayProducts, likeProduct } from './modules/store.js';
 
@@ -18,7 +19,7 @@ const store = async () => {
 
   response.forEach((element) => {
     const id = response.indexOf(element);
-    const likes = Likes.find((l) => l.item_id === id.toString())?.likes || 0;
+  const likes = Likes.find((l) => l.item_id === id.toString())?.likes || 0;
 
     const prod = new Product(
       id,
@@ -28,11 +29,9 @@ const store = async () => {
     );
     products.push(prod);
   });
-
   displayProducts(products);
   countProduct();
 };
-
 document.addEventListener('DOMContentLoaded', store());
 
 ProductList.addEventListener('click', (e) => {
@@ -41,6 +40,12 @@ ProductList.addEventListener('click', (e) => {
     const id = element.parentElement.parentElement.parentElement.parentElement.getAttribute(
       'id',
     );
-    likeProduct(products, id);
+   likeProduct(products, id);
+  } else if (element.getAttribute('id') === 'comment') {
+    const id = element.parentElement.parentElement.getAttribute('id');
+    const product = products.find((p) => p.id === parseInt(id, 10));
+    comments(product);
+  } else if (element.classList.contains('close')) {
+    ProductList.lastElementChild.remove();
   }
 });
