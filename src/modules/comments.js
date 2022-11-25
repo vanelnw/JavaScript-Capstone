@@ -1,15 +1,13 @@
-/* eslint-disable no-alert */
 import NewComment from './newComment.js';
 import addComment from './addComment.js';
-import { countElement } from './commentsCounter';
+import countElement from './commentsCounter.js';
 
 const comments = async (product) => {
   const cardsContainer = document.querySelector('.app_container');
   const productList = document.querySelector('.app_content');
-  console.log(product);
   const url = `https://us-central1-involvement-api.cloudfunctions.net/capstoneApi/apps/${process.env.API_KEY}/comments?item_id=${product.id}`;
   const comments = await fetch(url).then((response) => response.json());
-        productList.innerHTML += `
+  productList.innerHTML += `
         <div class= 'modal-container'>
         <div class="modal" id="exampleModal${product.id}" >
             <div class="modal-content">
@@ -32,9 +30,8 @@ const comments = async (product) => {
       </div>
         `;
 
-
-const commentContent = cardsContainer.querySelector('.result');
-comments?.forEach((element) => commentContent.innerHTML += `<div>${element.creation_date} ${element.username} : ${element.comment}</div>`)
+  const commentContent = cardsContainer.querySelector('.result');
+  comments?.forEach((element) => { commentContent.innerHTML += `<div>${element.creation_date} ${element.username} : ${element.comment}</div>`; });
   countElement();
   cardsContainer.addEventListener('click', (e) => {
     // Comment's URL
@@ -55,8 +52,6 @@ comments?.forEach((element) => commentContent.innerHTML += `<div>${element.creat
         // Clear inputs
         e.target.parentElement[0].value = '';
         e.target.parentElement[1].value = '';
-      } else {
-        alert('Insert a comment');
       }
     }
   });

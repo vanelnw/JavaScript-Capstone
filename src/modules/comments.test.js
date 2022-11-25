@@ -2,7 +2,7 @@
  * @jest-environment jsdom
  */
 
-import { countElement } from './counter';
+import countElement from './commentsCounter.js';
 
 test('items counter check ', () => {
   document.body.innerHTML = `
@@ -16,12 +16,11 @@ test('items counter check ', () => {
     </div>
     </div>
   `;
-  const select = document.querySelector('.total-comments')
+  const select = document.querySelector('.total-comments');
   countElement();
 
   expect(select.innerHTML).toBe('4');
 });
-
 
 test('items counter check if comments are 3', () => {
   document.body.innerHTML = `
@@ -34,7 +33,7 @@ test('items counter check if comments are 3', () => {
     </div>
     </div>
   `;
-  const select = document.querySelector('.total-comments')
+  const select = document.querySelector('.total-comments');
   countElement();
 
   expect(select.innerHTML).toBe('3');
@@ -50,7 +49,7 @@ test('items counter check if comments are 2', () => {
     </div>
     </div>
   `;
-  const select = document.querySelector('.total-comments')
+  const select = document.querySelector('.total-comments');
   countElement();
 
   expect(select.innerHTML).toBe('2');

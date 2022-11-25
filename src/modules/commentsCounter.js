@@ -1,8 +1,8 @@
 const countElement = () => {
-  const commentContainer = document.querySelector('.result')
+  const commentContainer = document.querySelector('.result');
   const commentCount = document.querySelector('.total-comments');
   const itemCount = commentContainer.childElementCount;
   commentCount.innerHTML = itemCount;
-}
+};
 
-export { countElement };
+export default countElement;
