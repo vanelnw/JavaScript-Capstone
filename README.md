@@ -1,3 +1,5 @@
+<a name="readme-top"></a>
+
 
 <div align="center">
 
@@ -98,7 +100,7 @@ The website display the list of products and allows users to like their favorite
 
 ### Future Features <a name="key-features"></a>
 
-- **Make reservations**
+- **Make reservation**
 - **Implement reservations popup**
 - **Add new reservation to the favorite products**
 
