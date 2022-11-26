@@ -1,5 +1,3 @@
-<a name="readme-top"></a>
-
 
 <div align="center">
 
@@ -46,6 +44,11 @@ The website display the list of products and allows users to like their favorite
 ### Tech Stack <a name="tech-stack"></a>
 
 <details>
+  <summary>Team Work</summary>
+  <ul>
+    <li><a href="https://github.com/dialite/kanban_board/projects/1">Kanban Board</a></li>
+  </ul>
+</details>
   <summary>Building</summary>
   <ul>
     <li><a href="https://www.javascript.com/">JavaScript</a></li>
@@ -87,10 +90,17 @@ The website display the list of products and allows users to like their favorite
 
 ### Key Features <a name="key-features"></a>
 
-
 - **Like the favorite Product**
 - **Check for comments of other users in a pop-up**
 - **Add new comment to the favorite products**
+
+<!-- Features -->
+
+### Future Features <a name="key-features"></a>
+
+- **Make reservation**
+- **Implement reservations popup**
+- **Add new reservation to the favorite products**
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 

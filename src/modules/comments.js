@@ -23,6 +23,8 @@ const comments = async (product) => {
               <div class="modal-body">
                 <img src="${product.image}" alt="Sample photo" class="card-image" />
                 <h5 class="modal-title" id="exampleModalLabel">${product.name}</h5>
+                <div class= 'result'>
+                </div>
                 <h5 class= "comment-head">Add a comment</h5>
                 <form class= 'form-content'>
                   <input type="text" class= 'names' id="fname${product.id}" name="${product.id}" placeholder="Your name" autocomplete="off" required>
@@ -30,8 +32,6 @@ const comments = async (product) => {
                   <button type="button" class="btn btn-primary btnAddComment">Comment</button>
                 </form>
                 <h4>Comments(<span class="total-comments">0</span>)</h4>
-                <div class= 'result'>
-                </div>
               </div>
             </div>
         </div>
