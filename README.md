@@ -98,7 +98,7 @@ The website display the list of products and allows users to like their favorite
 
 ### Future Features <a name="key-features"></a>
 
-- **Make reservation**
+- **Make reservations**
 - **Implement reservations popup**
 - **Add new reservation to the favorite products**
 
