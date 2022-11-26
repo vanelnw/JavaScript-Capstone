@@ -19,7 +19,7 @@
   "bugs": {
     "url": "https://github.com/vanelnw/JavaScript-Capstone/issues"
   },
-  "homepage": "https://github.com/vanelnw/JavaScript-Capstone#readme",
+  
   "devDependencies": {
     "@babel/eslint-parser": "^7.19.1",
     "@babel/plugin-transform-modules-commonjs": "^7.19.6",
