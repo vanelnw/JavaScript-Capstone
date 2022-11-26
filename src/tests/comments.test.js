@@ -2,7 +2,7 @@
  * @jest-environment jsdom
  */
 
-import countElement from './commentsCounter.js';
+import countElement from '../modules/commentsCounter.js';
 
 test('items counter check ', () => {
   document.body.innerHTML = `
