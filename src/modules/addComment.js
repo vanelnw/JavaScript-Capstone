@@ -1,3 +1,5 @@
+import countElement from './commentsCounter.js';
+
 const displayComment = (newComment) => {
   const today = new Date().toISOString().slice(0, 10);
   const commentContent = document.querySelector('.result');
@@ -11,6 +13,7 @@ const addComment = async (newComment, url) => {
     headers: {
       'Content-type': 'application/json; charset=UTF-8',
     },
-  }).then(displayComment(newComment));
+  }).then(displayComment(newComment))
+    .then(countElement());
 };
 export default addComment;
