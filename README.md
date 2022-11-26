@@ -51,6 +51,7 @@ The website display the list of products and allows users to like their favorite
     <li><a href="https://github.com/dialite/kanban_board/projects/1">Kanban Board</a></li>
   </ul>
 </details>
+<details>
   <summary>Building</summary>
   <ul>
     <li><a href="https://www.javascript.com/">JavaScript</a></li>
