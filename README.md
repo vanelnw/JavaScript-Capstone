@@ -111,7 +111,7 @@ The website display the list of products and allows users to like their favorite
 ## 🚀 Live Demo <a name="live-demo"></a>
 
 
-- [Live Demo Link](https://vanelnw.github.io/JavaScript-Capstone/)
+- [Live Demo Link](https://vanelnw.github.io/JavaScript-Capstone/dist/)
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
